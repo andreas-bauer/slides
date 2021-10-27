@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="../reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/dist/theme/white.css">
+        <link rel="stylesheet" href="custom.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+
+        <!-- Material Design icons as font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+                    <h1>Firebase Introduction</h1>
+                    <small>By Andreas Bauer</small>
+                    <small>
+                        <a
+                          rel="license"
+                          href="http://creativecommons.org/licenses/by/4.0/"
+                        ></a
+                        ><br />This work is licensed under a
+                        <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"
+                          >Creative Commons Attribution 4.0 International License</a
+                        >.
+                      </small>
+                </section>
+
+				<section>
+                    Why should we use such a thing as Firebase?
+                </section>
+
+                <section>
+                    <div class="grid-container">
+                        <div class="grid-item">
+                            <div class="fragment">
+                                <i class="material-icons" style="font-size: 200%">storage</i>
+                                <p>Database</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="fragment">
+                                <i class="material-icons" style="font-size: 200%">people</i>
+                                <p>Authentication</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="fragment">
+                                <i class="material-icons" style="font-size: 200%">perm_media</i>
+                                <p>Cloud Storage</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="fragment">
+                                <i class="material-icons" style="font-size: 200%;">public</i>
+                                <p>Hosting</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div>
+                                <i class="material-icons" style="font-size: 300%">phone_iphone</i>
+                                <i class="material-icons" style="font-size: 300%">laptop</i>
+                                <p>Application</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="fragment">
+                                <i class="material-icons" style="font-size: 200%">send</i>
+                                <p>Messaging</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="fragment">
+                                <i class="material-icons" style="font-size: 200%">memory</i>
+                                <p>Cloud Functions</p>
+                            </div>
+                        </div>
+                        <div class="grid-item">
+                            <div class="fragment">
+                                <i class="material-icons" style="font-size: 200%">auto_graph</i>
+                                <p>Scalability</p>
+                            </div> 
+                        </div>
+                        <div class="grid-item">
+                            <div class="fragment">
+                                <i class="material-icons" style="font-size: 200%">insert_chart_outlined</i>
+                                <p>Analytics</p>
+                            </div>
+                        </div>
+                      </div>
+                </section>
+
+                <section>
+                    <p style="font-size:100px">😰</p>
+                    But we wanted to develop our app and not a complete backend.
+                </section>
+                
+                <section>
+                    Firebase is a development platform by Google that provides us with a Backend-as-a-Service so we can focus on our app.
+                </section>
+
+                <section>
+                    What do Google Cloud and Firebase have in common?
+                    <img data-src="images/cloud_and_firebase.png">
+                    <p style="font-size:100px">🧐</p>
+                </section>
+
+                <section>
+                    A Firebase project is a container for Google Cloud resources.
+                </section>
+
+                <section>
+                    Demo
+                </section>
+
+                <section>Prod vs Dev Environment</section>
+
+                <section>
+                    Alternative Solutions (AWS, Microsoft, etc.)
+                </section>
+       
+			</div>
+            <footer style="position:absolute;width:calc(100% - 1em);bottom:0;font-size:40%;z-index:1;display:flex;justify-content:space-between;padding:0.5em"><span>https://github.com/andreas-bauer</span></footer>
+		</div>
+
+		<script src="../reveal.js/dist/reveal.js"></script>
+		<script src="../reveal.js/plugin/notes/notes.js"></script>
+		<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+                slideNumber: true,
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
