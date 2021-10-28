@@ -105,6 +105,7 @@
                 </section>
                 
                 <section>
+                    <img data-src="images/logo-standard.png">
                     Firebase is a development platform by Google that provides us with a Backend-as-a-Service so we can focus on our app.
                 </section>
 
@@ -122,6 +123,79 @@
                     Demo
                 </section>
 
+                <section>
+                    Add Firebase SDKs to your app
+                    <pre data-id="code-animation">
+                        <code class="hljs" data-trim >
+                            <script type="text/template">
+                                // file: app/build.gradle
+                                dependencies {
+                                    // Import the Firebase BoM
+                                    implementation platform('com.google.firebase:firebase-bom:28.4.2')
+                                    // When using the BoM, you don't specify versions in Firebase library dependencies
+                                  
+                                    // Declare the dependencies for specific products
+                                    implementation 'com.google.firebase:firebase-auth'
+                                    implementation 'com.google.firebase:firebase-firestore'
+                                  }
+                            </script>
+                        </code>
+                    </pre>
+                </section>
+
+                <section data-auto-animate>
+                    <span data-id="code-title">Set a document in Firestore (Java)</span>
+                    <pre data-id="code-animation">
+                        <code class="hljs" data-trim >
+                            <script type="text/template">
+                                Map<String, Object> city = new HashMap<>();
+                                city.put("name", "Los Angeles");
+                                city.put("state", "CA");
+                                city.put("country", "USA");
+
+                                db.collection("cities").document("LA")
+                                .set(city)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG, "DocumentSnapshot successfully written!");
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error writing document", e);
+                                    }
+                                });
+                            </script>
+                        </code>
+                    </pre>
+                </section>
+
+                <section data-auto-animate>
+                    <span data-id="code-title">Set a document in Firestore (Kotlin)</span>
+                    <pre data-id="code-animation">
+                        <code class="hljs" data-trim >
+                            <script type="text/template">
+                                val city = hashMapOf(
+                                    "name" to "Los Angeles",
+                                    "state" to "CA",
+                                    "country" to "USA"
+                                )
+
+                                db.collection("cities").document("LA")
+                                .set(city)
+                                .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!") }
+                                .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e) }
+                            </script>
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    TBD
+                </section>
+
                 <section>Prod vs Dev Environment</section>
 
                 <section>
@@ -129,7 +203,9 @@
                 </section>
        
 			</div>
-            <footer style="position:absolute;width:calc(100% - 1em);bottom:0;font-size:40%;z-index:1;display:flex;justify-content:space-between;padding:0.5em"><span>https://github.com/andreas-bauer</span></footer>
+            <footer style="position:absolute;width:calc(100% - 1em);bottom:0;font-size:40%;z-index:1;display:flex;justify-content:space-between;padding:0.5em">
+                <span>https://andreas-bauer.github.io/slides/10-firebase-introduction</span>
+            </footer>
 		</div>
 
 		<script src="../reveal.js/dist/reveal.js"></script>
