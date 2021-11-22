@@ -119,25 +119,123 @@
                     A Firebase project is a container for Google Cloud resources.
                 </section>
 
+                <section data-background-image="images/google-cloud-overview.png" data-background-size="contain">
+                    <!-- <span>Source: https://github.com/priyankavergadia/google-cloud-4-words</span> -->
+                </section>
+
+                <section data-background-image="images/firebase-overview.png" data-background-size="contain">
+
+                </section>
+
                 <section>
                     Demo
                 </section>
 
                 <section>
+                    Setup Firebase
+
+                    <ol>
+						<li>Go to <a href="https://console.firebase.google.com/">https://console.firebase.google.com/</a> </li>
+						<li>Create a now project</li>
+						<li>Store 'google-services.json' in project/app folder</li>
+                        <li>Add Firebase SDKs to your Android project</li>
+					</ol>
+                </section>
+
+                <section>
                     Add Firebase SDKs to your app
                     <pre data-id="code-animation">
-                        <code class="hljs" data-trim >
+                        <code class="hljs" data-trim data-line-numbers="1,9">
+                            <script type="text/template">
+                                // file: build.gradle
+                                buildscript {
+                                    repositories {
+                                        google()
+                                        mavenCentral()
+                                    }
+                                    dependencies {
+                                        classpath "com.android.tools.build:gradle:7.0.3"
+                                        classpath "com.google.gms:google-services:4.3.10"
+                                    }
+                                }
+                            </script>
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    Add Firebase SDKs to your app
+                    <pre data-id="code-animation">
+                        <code class="hljs" data-trim data-line-numbers="1,4,8-11">
                             <script type="text/template">
                                 // file: app/build.gradle
+                                plugins {
+                                    id 'com.android.application'
+                                    id 'com.google.gms.google-services'
+                                }
+                                ...
                                 dependencies {
-                                    // Import the Firebase BoM
                                     implementation platform('com.google.firebase:firebase-bom:28.4.2')
-                                    // When using the BoM, you don't specify versions in Firebase library dependencies
-                                  
-                                    // Declare the dependencies for specific products
+                                    implementation 'com.google.firebase:firebase-analytics'
                                     implementation 'com.google.firebase:firebase-auth'
                                     implementation 'com.google.firebase:firebase-firestore'
-                                  }
+                                    ...
+                                }
+                            </script>
+                        </code>
+                    </pre>
+                    <p>See <a href="https://firebase.google.com/docs/android/setup#available-libraries">available Firebase libraries</a>.</p>
+                </section>
+
+                <section>
+                    Authentication
+                </section>
+
+                <section data-background-image="images/auth-sign-in-providers.png" data-background-size="contain"></section>
+                
+                <section data-background-image="images/auth-template.png" data-background-size="contain"></section>
+
+                <section>
+                    Firestore Database
+                </section>
+
+                <section>
+                    Firestore Database
+
+                    <ol>
+						<li>Document-oriented NoSQL database</li>
+						<li>Documents are organized in collections</li>
+                        <li>Each document contains a set of key-value pairs</li>
+						<li>Hierarchy: Collection -> Document -> Data Field</li>
+					</ol>
+                </section>
+
+                <section>
+                    Firestore Database Exercise (~10 minutes)
+
+                    <ul>
+                        <li>How would you design your Firestore DB when you have two collections that are in a relationship?</li>
+						<li>
+                            <b>TODO:</b> Create a collection for <em>recipes</em> and one for <em>shopping lists</em> in Firebase. 
+                            <ul>
+                                <li>A shopping list consists of multiple recipes.</li>
+                                <li>Add sample data to demonstrate your solution.</li>
+                            </ul>
+                            
+                        </li>
+					</ul>
+                    <pre>
+                        <code class="hljs" data-trim >
+                            <script type="text/template">
+                            interface Recipe {
+                                val name: String
+                                val servingSize: Int
+                                var ingredients: String
+                                // more properties   
+                            }
+                            interface ShoppingList {
+                                // ?
+                            }
                             </script>
                         </code>
                     </pre>
@@ -146,8 +244,9 @@
                 <section data-auto-animate>
                     <span data-id="code-title">Set a document in Firestore (Java)</span>
                     <pre data-id="code-animation">
-                        <code class="hljs" data-trim >
+                        <code class="hljs" data-trim data-line-numbers>
                             <script type="text/template">
+                                // Source: https://firebase.google.com/docs/firestore/manage-data/add-data
                                 Map<String, Object> city = new HashMap<>();
                                 city.put("name", "Los Angeles");
                                 city.put("state", "CA");
@@ -175,8 +274,9 @@
                 <section data-auto-animate>
                     <span data-id="code-title">Set a document in Firestore (Kotlin)</span>
                     <pre data-id="code-animation">
-                        <code class="hljs" data-trim >
+                        <code class="hljs" data-trim data-line-numbers>
                             <script type="text/template">
+                                // Source: https://firebase.google.com/docs/firestore/manage-data/add-data
                                 val city = hashMapOf(
                                     "name" to "Los Angeles",
                                     "state" to "CA",
@@ -192,6 +292,85 @@
                     </pre>
                 </section>
 
+                <section data-auto-animate>
+                    <span data-id="code-title">Get a single document from Firestore (Kotlin)</span>
+                    <pre data-id="code-animation">
+                        <code class="hljs" data-trim data-line-numbers >
+                            <script type="text/template">
+                                // Source: https://firebase.google.com/docs/firestore/manage-data/get-data
+                                val docRef = db.collection("cities").document("SF")
+                                docRef.get()
+                                .addOnSuccessListener { document ->
+                                    if (document != null) {
+                                        Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                                    } else {
+                                        Log.d(TAG, "No such document")
+                                    }
+                                }
+                                .addOnFailureListener { exception ->
+                                    Log.d(TAG, "get failed with ", exception)
+                                }
+                            </script>
+                        </code>
+                    </pre>
+                </section>
+                
+                <section data-auto-animate>
+                    <span data-id="code-title">Get multiple documents from Firestore (Kotlin)</span>
+                    <pre data-id="code-animation">
+                        <code class="kotlin" data-trim data-line-numbers >
+                            <script type="text/template">
+                                // Source: https://firebase.google.com/docs/firestore/manage-data/get-data
+                                db.collection("cities")
+                                .whereEqualTo("capital", true)
+                                .get()
+                                .addOnSuccessListener { documents ->
+                                    for (document in documents) {
+                                        Log.d(TAG, "${document.id} => ${document.data}")
+                                    }
+                                }
+                                .addOnFailureListener { exception ->
+                                    Log.w(TAG, "Error getting documents: ", exception)
+                                }
+                            </script>
+                        </code>
+                    </pre>
+                </section>
+
+                <section>
+                    Firestore Rules Exercise (~10 minutes)
+                    <br/>
+                    <ul>
+                        <li>The next slide presents three Firestore access rules.</li>
+                        <li><b>TODO:</b>Find for each of presented rules three example collections that would fit the domain of your app. </li>
+                    </ul>
+                    
+                </section>
+
+                <section data-auto-animate>
+                    <span data-id="code-title">Firestore rules</span>
+                    <pre data-id="code-animation">
+                        <code class="hljs" data-trim data-line-numbers="1-13|4-6|7-9|10-13" >
+                            <script type="text/template">
+                                rules_version = '2';
+                                service cloud.firestore {
+                                match /databases/{database}/documents {
+                                    match /collection_A/{document=**} {
+                                        allow read, write: if request.auth != null;
+                                    }
+                                    match /collection_B/{document=**} {
+                                        allow read, write: if false;
+                                    }
+                                    match /collection_C/{document=**} {
+                                        allow read: if true;
+                                        allow write: if false;
+                                    }  
+                                }}
+                            </script>
+                        </code>
+                    </pre>
+                </section>
+
                 <section>
                     TBD
                 </section>
@@ -199,7 +378,26 @@
                 <section>Prod vs Dev Environment</section>
 
                 <section>
-                    Alternative Solutions (AWS, Microsoft, etc.)
+                    Firestore Gotchas
+                    
+                    <br/>
+                    
+                    <ul>
+                        <li>Search</li>
+                        <li>Count documents</li>
+                    </ul>
+                </section>
+
+                <section>
+                    Alternative Providers 
+                    <br/>
+
+                    <ul>
+                        <li>AWS Amplify</li>
+                        <li>Azure Mobile Apps Service</li>
+                        <li>Heroku</li>
+                        <li>Netlify</li>
+                    </ul>
                 </section>
        
 			</div>
