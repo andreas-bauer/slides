@@ -21,7 +21,7 @@
 		<div class="reveal">
 			<div class="slides">
 				<section>
-                    <h1>Firebase Introduction</h1>
+                    <h2>Firebase Introduction</h2>
                     <small>By Andreas Bauer</small>
                     <small>
                         <a
@@ -105,13 +105,15 @@
                 </section>
                 
                 <section>
-                    <img data-src="images/logo-standard.png">
+                    <img width="50%" data-src="images/logo-standard.png">
+                    <p>
                     Firebase is a development platform by Google that provides us with a Backend-as-a-Service so we can focus on our app.
+                    </p>
                 </section>
 
                 <section>
                     What do Google Cloud and Firebase have in common?
-                    <img data-src="images/cloud_and_firebase.png">
+                    <img width="50%" data-src="images/cloud_and_firebase.png">
                     <p style="font-size:100px">🧐</p>
                 </section>
 
@@ -128,22 +130,24 @@
                 </section>
 
                 <section>
-                    Demo
+                    <h4>Demo</h4>
                 </section>
 
                 <section>
-                    Setup Firebase
+                    <h4>Setup Firebase</h4>
+                    <p>
 
-                    <ol>
-						<li>Go to <a href="https://console.firebase.google.com/">https://console.firebase.google.com/</a> </li>
-						<li>Create a now project</li>
-						<li>Store 'google-services.json' in project/app folder</li>
-                        <li>Add Firebase SDKs to your Android project</li>
-					</ol>
+                        <ol>
+                            <li>Go to <a href="https://console.firebase.google.com/">https://console.firebase.google.com/</a> </li>
+                            <li>Create a now project</li>
+                            <li>Store 'google-services.json' in project/app folder</li>
+                            <li>Add Firebase SDKs to your Android project</li>
+                        </ol>
+                    </p>
                 </section>
 
                 <section>
-                    Add Firebase SDKs to your app
+                    <h4>Add Firebase SDKs to your app</h4>
                     <pre data-id="code-animation">
                         <code class="hljs" data-trim data-line-numbers="1,9">
                             <script type="text/template">
@@ -164,7 +168,7 @@
                 </section>
 
                 <section>
-                    Add Firebase SDKs to your app
+                    <h4>Add Firebase SDKs to your app</h4>
                     <pre data-id="code-animation">
                         <code class="hljs" data-trim data-line-numbers="1,4,8-11">
                             <script type="text/template">
@@ -184,11 +188,11 @@
                             </script>
                         </code>
                     </pre>
-                    <p>See <a href="https://firebase.google.com/docs/android/setup#available-libraries">available Firebase libraries</a>.</p>
+                    <small>See <a href="https://firebase.google.com/docs/android/setup#available-libraries">available Firebase libraries</a>.</small>
                 </section>
 
                 <section>
-                    Authentication
+                    <h4>Authentication</h4>
                 </section>
 
                 <section data-background-image="images/auth-sign-in-providers.png" data-background-size="contain"></section>
@@ -196,11 +200,11 @@
                 <section data-background-image="images/auth-template.png" data-background-size="contain"></section>
 
                 <section>
-                    Firestore Database
+                    <h4>Firestore Database</h4>
                 </section>
 
                 <section>
-                    Firestore Database
+                    <h4>Firestore Database</h4>
 
                     <ol>
 						<li>Document-oriented NoSQL database</li>
@@ -211,8 +215,7 @@
                 </section>
 
                 <section>
-                    Firestore Database Exercise (~10 minutes)
-
+                    <h4>Firestore Database Exercise</h4>
                     <ul>
                         <li>How would you design your Firestore DB when you have two collections that are in a relationship?</li>
 						<li>
@@ -242,7 +245,7 @@
                 </section>
 
                 <section data-auto-animate>
-                    <span data-id="code-title">Set a document in Firestore (Java)</span>
+                    <h4 data-id="code-title">Set a document in Firestore (Java)</h4>
                     <pre data-id="code-animation">
                         <code class="hljs" data-trim data-line-numbers>
                             <script type="text/template">
@@ -272,7 +275,7 @@
                 </section>
 
                 <section data-auto-animate>
-                    <span data-id="code-title">Set a document in Firestore (Kotlin)</span>
+                    <h4 data-id="code-title">Set a document in Firestore (Kotlin)</h4>
                     <pre data-id="code-animation">
                         <code class="hljs" data-trim data-line-numbers>
                             <script type="text/template">
@@ -293,7 +296,7 @@
                 </section>
 
                 <section data-auto-animate>
-                    <span data-id="code-title">Get a single document from Firestore (Kotlin)</span>
+                    <h4 data-id="code-title">Get a single document from Firestore (Kotlin)</h4>
                     <pre data-id="code-animation">
                         <code class="hljs" data-trim data-line-numbers >
                             <script type="text/template">
@@ -316,7 +319,7 @@
                 </section>
                 
                 <section data-auto-animate>
-                    <span data-id="code-title">Get multiple documents from Firestore (Kotlin)</span>
+                    <h4 data-id="code-title">Get multiple documents from Firestore (Kotlin)</h4>
                     <pre data-id="code-animation">
                         <code class="kotlin" data-trim data-line-numbers >
                             <script type="text/template">
@@ -338,8 +341,7 @@
                 </section>
 
                 <section>
-                    Firestore Rules Exercise (~10 minutes)
-                    <br/>
+                    <h4>Firestore Rules Exercise</h4>
                     <ul>
                         <li>The next slide presents three Firestore access rules.</li>
                         <li><b>TODO:</b>Find for each of presented rules three example collections that would fit the domain of your app. </li>
@@ -348,9 +350,9 @@
                 </section>
 
                 <section data-auto-animate>
-                    <span data-id="code-title">Firestore rules</span>
+                    <h4 data-id="code-title">Firestore rules</h4>
                     <pre data-id="code-animation">
-                        <code class="hljs" data-trim data-line-numbers="1-13|4-6|7-9|10-13" >
+                        <code class="hljs" data-trim data-line-numbers="1-14|4-6|7-9|10-13" >
                             <script type="text/template">
                                 rules_version = '2';
                                 service cloud.firestore {
@@ -378,10 +380,7 @@
                 <section>Prod vs Dev Environment</section>
 
                 <section>
-                    Firestore Gotchas
-                    
-                    <br/>
-                    
+                    <h4>Firestore Gotchas</h4>
                     <ul>
                         <li>Search</li>
                         <li>Count documents</li>
@@ -389,9 +388,7 @@
                 </section>
 
                 <section>
-                    Alternative Providers 
-                    <br/>
-
+                    <h4>Alternative Providers</h4>
                     <ul>
                         <li>AWS Amplify</li>
                         <li>Azure Mobile Apps Service</li>
