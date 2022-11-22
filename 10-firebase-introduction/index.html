@@ -1,26 +1,26 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+        <title>reveal.js</title>
 
-		<link rel="stylesheet" href="../reveal.js/dist/reset.css">
-		<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
-		<link rel="stylesheet" href="../reveal.js/dist/theme/white.css">
+        <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+        <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+        <link rel="stylesheet" href="../reveal.js/dist/theme/white.css">
         <link rel="stylesheet" href="custom.css">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+        <!-- Theme used for syntax highlighted code -->
+        <link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
 
         <!-- Material Design icons as font-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section>
                     <h2>Firebase Introduction</h2>
                     <small>By Andreas Bauer</small>
                     <small>
@@ -35,7 +35,7 @@
                       </small>
                 </section>
 
-				<section>
+                <section>
                     Why should we use such a thing as Firebase?
                 </section>
 
@@ -88,7 +88,7 @@
                             <div class="fragment">
                                 <i class="material-icons" style="font-size: 200%">auto_graph</i>
                                 <p>Scalability</p>
-                            </div> 
+                            </div>
                         </div>
                         <div class="grid-item">
                             <div class="fragment">
@@ -103,7 +103,7 @@
                     <p style="font-size:100px">😰</p>
                     But we wanted to develop our app and not a complete backend
                 </section>
-                
+
                 <section>
                     <img width="50%" data-src="images/logo-standard.png">
                     <p>
@@ -129,7 +129,7 @@
 
                 </section>
 
-                
+
 
                 <section>
                     <h4>Setup Firebase</h4>
@@ -194,7 +194,7 @@
                 </section>
 
                 <section data-background-image="images/auth-sign-in-providers.png" data-background-size="contain"></section>
-                
+
                 <section data-background-image="images/auth-template.png" data-background-size="contain"></section>
 
                 <section>
@@ -210,26 +210,26 @@
                     <h4>Firestore Database</h4>
 
                     <ol>
-						<li>Document-oriented NoSQL database</li>
-						<li>Documents are organized in collections</li>
+                        <li>Document-oriented NoSQL database</li>
+                        <li>Documents are organized in collections</li>
                         <li>Each document contains a set of key-value pairs</li>
-						<li>Hierarchy: Collection -> Document -> Data Field</li>
-					</ol>
+                        <li>Hierarchy: Collection -> Document -> Data Field</li>
+                    </ol>
                 </section>
 
                 <section>
                     <h4>Firestore Database Exercise</h4>
                     <ul>
                         <li>How would you design your Firestore DB when you have two collections that are in a relationship?</li>
-						<li>
-                            <b>TODO:</b> Create a collection for <em>recipes</em> and one for <em>shopping lists</em> in Firebase 
+                        <li>
+                            <b>TODO:</b> Create a collection for <em>recipes</em> and one for <em>shopping lists</em> in Firebase
                             <ul>
                                 <li>A shopping list consists of multiple recipes</li>
                                 <li>Add sample data to demonstrate your solution</li>
                             </ul>
-                            
+
                         </li>
-					</ul>
+                    </ul>
                     <pre>
                         <code class="hljs" data-trim >
                             <script type="text/template">
@@ -237,7 +237,7 @@
                                 val name: String
                                 val servingSize: Int
                                 var ingredients: String
-                                // more properties   
+                                // more properties
                             }
                             interface ShoppingList {
                                 // ?
@@ -320,7 +320,7 @@
                         </code>
                     </pre>
                 </section>
-                
+
                 <section data-auto-animate>
                     <h4 data-id="code-title">Get multiple documents from Firestore (Kotlin)</h4>
                     <pre data-id="code-animation">
@@ -349,7 +349,7 @@
                         <li>The next slide presents three Firestore access rules</li>
                         <li><b>TODO:</b>Find for each of presented rules three example collections that would fit the domain of your app</li>
                     </ul>
-                    
+
                 </section>
 
                 <section data-auto-animate>
@@ -369,7 +369,7 @@
                                     match /collection_C/{document=**} {
                                         allow read: if true;
                                         allow write: if false;
-                                    }  
+                                    }
                                 }}
                             </script>
                         </code>
@@ -410,23 +410,23 @@
             <footer style="position:absolute;width:calc(100% - 1em);bottom:0;font-size:40%;z-index:1;display:flex;justify-content:space-between;padding:0.5em">
                 <span>https://andreas-bauer.github.io/slides/10-firebase-introduction</span>
             </footer>
-		</div>
+        </div>
 
-		<script src="../reveal.js/dist/reveal.js"></script>
-		<script src="../reveal.js/plugin/notes/notes.js"></script>
-		<script src="../reveal.js/plugin/markdown/markdown.js"></script>
-		<script src="../reveal.js/plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+        <script src="../reveal.js/dist/reveal.js"></script>
+        <script src="../reveal.js/plugin/notes/notes.js"></script>
+        <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+        <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+        <script>
+            // More info about initialization & config:
+            // - https://revealjs.com/initialization/
+            // - https://revealjs.com/config/
+            Reveal.initialize({
+                hash: true,
                 slideNumber: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+            });
+        </script>
+    </body>
 </html>
