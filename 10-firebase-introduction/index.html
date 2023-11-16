@@ -147,18 +147,12 @@
                 <section>
                     <h4>Add Firebase SDKs to your app</h4>
                     <pre data-id="code-animation">
-                        <code class="hljs" data-trim data-line-numbers="1,9">
+                        <code class="hljs" data-trim data-line-numbers>
                             <script type="text/template">
-                                // file: build.gradle
-                                buildscript {
-                                    repositories {
-                                        google()
-                                        mavenCentral()
-                                    }
-                                    dependencies {
-                                        classpath "com.android.tools.build:gradle:7.0.3"
-                                        classpath "com.google.gms:google-services:4.3.10"
-                                    }
+                                // file: build.gradle.kts
+                                plugins {
+                                    id("com.android.application") 
+                                    id("com.google.gms.google-services") version "4.4.0" apply false
                                 }
                             </script>
                         </code>
@@ -170,17 +164,17 @@
                     <pre data-id="code-animation">
                         <code class="hljs" data-trim data-line-numbers="1,4,8-11">
                             <script type="text/template">
-                                // file: app/build.gradle
+                                // file: app/build.gradle.kts
                                 plugins {
-                                    id 'com.android.application'
-                                    id 'com.google.gms.google-services'
+                                    id("com.android.application")
+                                    id("com.google.gms.google-services")
                                 }
                                 ...
                                 dependencies {
-                                    implementation platform('com.google.firebase:firebase-bom:28.4.2')
-                                    implementation 'com.google.firebase:firebase-analytics'
-                                    implementation 'com.google.firebase:firebase-auth'
-                                    implementation 'com.google.firebase:firebase-firestore'
+                                    implementation(platform("com.google.firebase:firebase-bom:32.5.0"))
+                                    implementation("com.google.firebase:firebase-auth")
+                                    implementation("com.google.firebase:firebase-analytics")
+                                    implementation("com.google.firebase:firebase-firestore")
                                     ...
                                 }
                             </script>
